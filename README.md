@@ -1,6 +1,8 @@
 # Python starter kit
 
-## Prerequisites
+<img src="http://monkeymusicchallenge.com/images/monkey.png" align="right">
+
+### Prerequisites
 
 First of all, go to http://monkeymusicchallenge.com, sign up and get your API key.
 
@@ -14,7 +16,7 @@ We recommend installing packages using [pip](https://pip.pypa.io/en/latest/insta
 
 Also, if you run into trouble, make sure to use Python 2.7 or newer.
 
-## Getting started
+### Getting started
 
 Start by [forking](https://github.com/monkey-music-challenge/python-starter-kit/fork)
 this repository to your own GitHub user.
@@ -34,7 +36,7 @@ Make sure to surf to your team page before running the above commands...
 
 Your monkey is waiting for you!
 
-## How to complete the warmup challenge
+### How to complete the warmup challenge
 
 `main.py` contains the boilerplate needed to communicate with the server. You should not need to change anything in here unless we have done something wrong.
 
@@ -48,6 +50,6 @@ Remember, your mission is to:
 
 Have fun!
 
-## Bugs
+### Bugs
 
 When you find bugs in our code, please submit an issue or pull request to our [original starter kit repository](https://github.com/monkey-music-challenge/python-starter-kit).
