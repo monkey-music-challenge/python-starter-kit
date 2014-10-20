@@ -6,9 +6,11 @@ To understand this starter kit you will need to have basic knowledge of
 
 * [Python](https://www.python.org/)
 
-The python library [requests](http://docs.python-requests.org/en/latest/user/install/#install) must be installed on your machine as well.
+The python library [requests](http://docs.python-requests.org/en/latest/user/install/#install) must be installed on your machine as well. It is easily installed through [pip](https://pip.pypa.io/en/latest/installing.html).
 
 ## Usage
+
+NOTE: Implemented for Python 2.7. If you're experiencing any issues up/downgrade to this version.
 
 First of all, `fork` this repository to your own github user.
 
@@ -17,7 +19,8 @@ Now open up a terminal and run the following commands:
 ```bash
 git clone git@github.com:<username>/python-starter-kit.git
 cd python-starter-kit
-TEAM=myteamname API=XXXX python index.py
+pip install requests #Install pip if you don't already have it
+python index.py <teamname> <apiKey>
 ```
 
 These are all UNIX commands. Windows users are recommended [Cygwin](https://www.cygwin.com/) to make this work.

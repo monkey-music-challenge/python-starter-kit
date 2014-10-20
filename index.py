@@ -9,11 +9,14 @@ SERVER = os.getenv('SERVER', 'http://warmup.monkeymusicchallenge.com')
 
 # Teamname and API key are both provided as environmental variables
 # For an easy example on how to specify these see README.md
-TEAM = os.getenv('TEAM', None)
-API = os.getenv('API', None)
+teamName = None
+apiKey = None
+if len(sys.argv) == 3:
+	teamName = sys.argv[1];
+	apiKey = sys.argv[2];
 
-if TEAM == None or API == None:
-	print('ERROR: Please provide teamname and api key as follows: \nTEAM=myteamname API=XXXX python src/index.py')
+if teamName == None or apiKey == None:
+	print('Usage: python index.py <teamname> <apiKey>')
 	sys.exit()
 
 # The ai module should be the entry-point to your code
@@ -27,11 +30,11 @@ def post(data):
 					Some commands might require additional keys too.
 	"""
 	# Append the api key to all post requests
-	data.update({ 'apiKey': API })
+	data.update({ 'apiKey': apiKey })
 
 	# Send the request to our server, expect JSON back
 	r = requests.post(
-		SERVER + '/' + TEAM,
+		SERVER + '/' + teamName,
 		data=json.dumps(data),
 		headers={ 'Content-Type': 'application/json' }
 		)
@@ -56,7 +59,8 @@ while r:
 	direction = ai.move(gameState)
 
 	if gameState['turns'] <= 0:
-		print('Game over.')
+		print('Game over. This is what happened:')
+		print(gameState['hint'])
 		break
 
 	data = {
