@@ -20,9 +20,9 @@ team_name = sys.argv[1]
 api_key = sys.argv[2]
 
 # You POST to a team-specific URL:
-# warmup.monkeymusicchallenge.com/<your-team-name>
+# warmup.monkeymusicchallenge.com/team/<your-team-name>
 # Surf to this URL and watch your monkey carry out your commands!
-team_url = '%s/%s' % (server_url, team_name)
+team_url = '%s/team/%s' % (server_url, team_name)
 
 # We've put the AI-code in a separate module
 import ai
@@ -80,6 +80,6 @@ while current_game_state['turns'] > 0:
     current_game_state = post_to_server(next_move_command)
 
 # If the game is over, our server will tell you how you did
-# Go to warmup.monkeymusicchallenge.com/<your-team-name> for more details
+# Go to warmup.monkeymusicchallenge.com/team/<your-team-name> for more details
 print('\nGame over.\n')
 print('  ' + current_game_state['hint'])
