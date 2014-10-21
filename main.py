@@ -41,7 +41,11 @@ def post_to_server(command):
     # but you never know...
     if reply.status_code != requests.codes.ok:
         print('Error! We seem to have trouble talking to the server...\n')
-        print('  The server replied with status code %d and message: %s' % (reply.status_code, reply.text))
+        print('  The server replied with status code %d' % reply.status_code)
+
+        # The server specifies its own error messages on faulty requests
+        error = reply.json()
+        print('  %s' % error['message'])
         sys.exit(1)
 
     # The server replies with the current state of the game
@@ -82,4 +86,4 @@ while current_game_state['turns'] > 0:
 # If the game is over, our server will tell you how you did
 # Go to warmup.monkeymusicchallenge.com/team/<your-team-name> for more details
 print('\nGame over.\n')
-print('  ' + current_game_state['hint'])
+print('  ' + current_game_state['message'])
