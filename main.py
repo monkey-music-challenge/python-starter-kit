@@ -2,6 +2,7 @@
 
 import sys
 import os
+import urllib
 
 # You control your monkey by sending POST requests to the Monkey Music server
 server_url = 'http://warmup.monkeymusicchallenge.com';
@@ -22,7 +23,7 @@ api_key = sys.argv[2]
 # You POST to a team-specific URL:
 # warmup.monkeymusicchallenge.com/team/<your-team-name>
 # Surf to this URL and watch your monkey carry out your commands!
-team_url = '%s/team/%s' % (server_url, team_name)
+team_url = '%s/team/%s' % (server_url, urllib.quote(team_name))
 
 # We've put the AI-code in a separate module
 import ai
