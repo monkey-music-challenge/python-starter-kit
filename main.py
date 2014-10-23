@@ -67,7 +67,6 @@ current_game_state = post_to_server(new_game_command)
 
 # The current game state tells you if you have any turns left
 while current_game_state['turns'] > 0:
-
     print('Remaining turns: %d' % current_game_state['turns'])
 
     # Use your AI to decide in which direction to move...
@@ -80,11 +79,10 @@ while current_game_state['turns'] > 0:
         'apiKey': api_key,
     }
 
-    # After sending your next move, you'll get a new reply
-    # and we start at the top of the loop again
+    # After sending your next move, you'll get the new game state back
     current_game_state = post_to_server(next_move_command)
 
 # If the game is over, our server will tell you how you did
-# Go to warmup.monkeymusicchallenge.com/team/<your-team-name> for more details
+# Go to http://warmup.monkeymusicchallenge.com/team/<your-team-name> for more details
 print('\nGame over.\n')
 print('  ' + current_game_state['message'])
