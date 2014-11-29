@@ -27,7 +27,7 @@ Then, open up a terminal and:
 git clone git@github.com:<username>/python-starter-kit.git
 cd python-starter-kit
 pip install requests
-python main.py <your-team-name> <your-api-key>
+python main.py <your-team-name> <your-api-key> <game-id>
 ```
 
 These are all UNIX commands. Got Windows? We recommend [Cygwin](https://www.cygwin.com/).
@@ -41,12 +41,6 @@ Your monkey is waiting for you!
 `main.py` contains the boilerplate needed to communicate with the server. You should not need to change anything in here unless we have done something wrong.
 
 We suggest you go straight to `ai.py` and start playing around with the code.
-
-Remember, your mission is to:
-
-* guide your monkey through the warmup level
-* pick up all the music items
-* get them to the eagerly awaiting Spotify user
 
 Have fun!
 
